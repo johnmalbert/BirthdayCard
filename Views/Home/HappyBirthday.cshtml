@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Happy Birthday Erin!";
+}
+<h1 class="display-4 text-center m-3 p-4 text-light">Happy Birthday Erin!</h1>
+<div class="container bg-dark p-5">
+    <div class="row align-items-center">
+    @foreach (var item in @ViewBag.Messages)
+    {
+        @if(@item.ImgLink != null)
+        {        
+            <div class="col-sm-6">
+            <div class="card m-2" style="width: 100%;">
+
+                    <img class="card-img-top border" src="~/images/@item.ImgLink" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text lead">@item.Note</p>
+                    <span style="font-family: cursive;"><h5 class="text-center">~ @item.Creator</h5></span>
+                </div>
+            </div>
+        </div>
+        }
+    }
+    @foreach (var item in @ViewBag.Messages)
+    {
+        @if(@item.ImgLink == null)
+        {        
+            <div class="col-sm-6">
+            <div class="card m-2" style="width: 100%;">
+                <div class="card-body">
+                    <p class="card-text lead">@item.Note</p>
+                    <span style="font-family: cursive;"><h5 class="text-center">~ @item.Creator</h5></span>
+                </div>
+            </div>
+        </div>
+        }
+    }
+    </div>
+</div>

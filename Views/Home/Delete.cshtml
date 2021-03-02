@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Delete Messages";
+}
+<div class="container">
+    <ul>
+
+    @foreach (var item in @ViewBag.Messages)
+    {
+        <li>
+            <h1>@item.Creator</h1>
+            <h5>@item.Note</h5>        
+            <a href="card/@item.MessageId/delete" class="btn btn-danger">Delete this message?</a>
+        </li>
+    }
+    </ul>
+</div>

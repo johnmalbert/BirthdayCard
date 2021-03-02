@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Happy Birthday!";
+}
+<h1 class="display-4">Happy Birthday Erin!</h1>
+<h1 class="display-4">Edit or Delete Card</h1>
+        <div class="col-sm-6 text-center">
+            <div class="card mx-auto" style="width: 100%;">
+                @if(@ViewBag.MessageToConfirm.ImgLink != null)
+                {
+                    <img class="card-img-top border" src="~/images/@ViewBag.MessageToConfirm.ImgLink" alt="Card image cap">
+                }
+                <div class="card-body">
+                    <p class="card-text">@ViewBag.MessageToConfirm.Note</p>
+                    <span style="font-family: cursive;"><h5 class="card-title">@ViewBag.MessageToConfirm.Creator</h5></span>
+                </div>
+            </div>
+        </div>
+    <a class="btn btn-primary" href="/happy-birthday-erin">Confirm Message!</a>
+    <a class="btn btn-primary" href="/card/edit/@ViewBag.MessageToConfirm.MessageId">Edit Message</a>
+</div>
